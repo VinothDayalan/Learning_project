@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM XSS Lab</title>
+    <script>
+      function submitForm() {
+        var input = document.getElementById("user_input").value;
+        var output = document.getElementById("output");
+        output.innerHTML = "Hello, " + input + "!";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>DOM XSS Lab</h1>
+    <form>
+      <label for="user_input">Enter your name:</label>
+      <input type="text" id="user_input" name="user_input">
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <div id="output"></div>
+  </body>
+</html>
